@@ -1,5 +1,5 @@
 {
-  "$com": "https://turbo.build/schema.json",
+  "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "tasks": {
     "build": {
