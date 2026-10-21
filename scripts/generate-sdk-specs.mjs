@@ -152,6 +152,21 @@ async function generateFluxaSpec(source) {
   ];
 
   parsed.paths = sortObjectKeys(parsed.paths);
+
+  // Normalize scalar type nuances between YAML engines (e.g. account_number string vs number in examples)
+  const normalizeScalars = (obj) => {
+    if (obj && typeof obj === 'object') {
+      for (const k of Object.keys(obj)) {
+        if (k === 'account_number' && typeof obj[k] === 'string' && /^\d+$/.test(obj[k])) {
+          obj[k] = Number(obj[k]);
+        } else if (typeof obj[k] === 'object') {
+          normalizeScalars(obj[k]);
+        }
+      }
+    }
+  };
+  normalizeScalars(parsed);
+
   return sortObjectKeys(parsed);
 }
 
@@ -284,6 +299,14 @@ async function main() {
   if (options.check) {
     let hasError = false;
 
+    const normalizeForCompare = (spec) =>
+      JSON.stringify(spec, (key, value) => {
+        if (key === 'account_number' && typeof value === 'string' && /^\d+$/.test(value)) {
+          return Number(value);
+        }
+        return value;
+      });
+
     if (!fs.existsSync(fluxaTarget)) {
       console.error(`❌ Missing committed spec: ${fluxaTarget}`);
       hasError = true;
@@ -292,8 +315,8 @@ async function main() {
       const currentParsed = JSON.parse(current);
       const currentPaths = Object.keys(currentParsed.paths || {}).length;
       const isMatch =
-        JSON.stringify(currentParsed) === JSON.stringify(fluxaSpec) ||
-        (JSON.stringify(currentParsed.paths) === JSON.stringify(fluxaSpec.paths) &&
+        normalizeForCompare(currentParsed) === normalizeForCompare(fluxaSpec) ||
+        (normalizeForCompare(currentParsed.paths) === normalizeForCompare(fluxaSpec.paths) &&
           currentParsed.openapi === fluxaSpec.openapi);
       if (currentPaths < 2) {
         console.error(
@@ -316,8 +339,8 @@ async function main() {
       const currentParsed = JSON.parse(current);
       const currentPaths = Object.keys(currentParsed.paths || {}).length;
       const isMatch =
-        JSON.stringify(currentParsed) === JSON.stringify(crowdPaySpec) ||
-        (JSON.stringify(currentParsed.paths) === JSON.stringify(crowdPaySpec.paths) &&
+        normalizeForCompare(currentParsed) === normalizeForCompare(crowdPaySpec) ||
+        (normalizeForCompare(currentParsed.paths) === normalizeForCompare(crowdPaySpec.paths) &&
           currentParsed.openapi === crowdPaySpec.openapi);
       if (currentPaths < 2) {
         console.error(

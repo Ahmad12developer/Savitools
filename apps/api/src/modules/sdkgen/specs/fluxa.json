@@ -321,11 +321,7 @@
             "type": "string"
           },
           "actor_type": {
-            "enum": [
-              "api_key",
-              "user",
-              "system"
-            ],
+            "enum": ["api_key", "user", "system"],
             "type": "string"
           },
           "created_at": {
@@ -344,10 +340,7 @@
             "type": "object"
           },
           "mode": {
-            "enum": [
-              "test",
-              "live"
-            ],
+            "enum": ["test", "live"],
             "type": "string"
           },
           "resource_id": {
@@ -445,11 +438,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "to_wallet_id",
-          "asset",
-          "amount"
-        ],
+        "required": ["to_wallet_id", "asset", "amount"],
         "type": "object"
       },
       "BatchResponse": {
@@ -468,14 +457,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "processing",
-              "partial",
-              "completed",
-              "failed",
-              "compliance_hold"
-            ],
+            "enum": ["pending", "processing", "partial", "completed", "failed", "compliance_hold"],
             "type": "string"
           },
           "success_count": {
@@ -517,12 +499,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "submitted",
-              "confirmed",
-              "failed"
-            ],
+            "enum": ["pending", "submitted", "confirmed", "failed"],
             "type": "string"
           },
           "to_wallet_id": {
@@ -557,11 +534,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "active",
-              "revoked"
-            ],
+            "enum": ["pending", "active", "revoked"],
             "type": "string"
           },
           "updated_at": {
@@ -569,14 +542,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "id",
-          "account",
-          "status",
-          "cooldown_until",
-          "created_at",
-          "updated_at"
-        ],
+        "required": ["id", "account", "status", "cooldown_until", "created_at", "updated_at"],
         "type": "object"
       },
       "ClaimClaimableBalanceRequest": {
@@ -600,9 +566,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "claimed"
-            ],
+            "enum": ["claimed"],
             "type": "string"
           },
           "tx_hash": {
@@ -644,9 +608,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "type"
-        ],
+        "required": ["type"],
         "type": "object"
       },
       "ClaimableBalanceResponse": {
@@ -691,12 +653,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "claimed",
-              "revoked",
-              "expired"
-            ],
+            "enum": ["pending", "claimed", "revoked", "expired"],
             "type": "string"
           }
         },
@@ -717,9 +674,7 @@
             "description": "Omitted means unconditional"
           }
         },
-        "required": [
-          "account"
-        ],
+        "required": ["account"],
         "type": "object"
       },
       "ComplianceReview": {
@@ -767,11 +722,7 @@
             "type": "array"
           },
           "status": {
-            "enum": [
-              "pending",
-              "approved",
-              "rejected"
-            ],
+            "enum": ["pending", "approved", "rejected"],
             "type": "string"
           },
           "transaction_id": {
@@ -839,10 +790,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "wallet_id",
-          "quote_id"
-        ],
+        "required": ["wallet_id", "quote_id"],
         "type": "object"
       },
       "CreateBatchRequest": {
@@ -860,10 +808,7 @@
             "type": "array"
           }
         },
-        "required": [
-          "from_wallet_id",
-          "transfers"
-        ],
+        "required": ["from_wallet_id", "transfers"],
         "type": "object"
       },
       "CreateBeneficiaryRequest": {
@@ -877,9 +822,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "account"
-        ],
+        "required": ["account"],
         "type": "object"
       },
       "CreateClaimableBalanceRequest": {
@@ -918,11 +861,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "asset",
-          "amount",
-          "claimants"
-        ],
+        "required": ["asset", "amount", "claimants"],
         "type": "object"
       },
       "CreateClaimableBalanceResponse": {
@@ -981,11 +920,7 @@
             "type": "string"
           },
           "frequency": {
-            "enum": [
-              "daily",
-              "weekly",
-              "monthly"
-            ],
+            "enum": ["daily", "weekly", "monthly"],
             "type": "string"
           },
           "from_wallet_id": {
@@ -994,10 +929,7 @@
           },
           "missed_run_policy": {
             "description": "Defaults to run_once. skip advances past elapsed occurrences; run_once makes one catch-up payout.",
-            "enum": [
-              "skip",
-              "run_once"
-            ],
+            "enum": ["skip", "run_once"],
             "type": "string"
           },
           "start_date": {
@@ -1055,12 +987,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "from_wallet_id",
-          "to_wallet_id",
-          "asset",
-          "amount"
-        ],
+        "required": ["from_wallet_id", "to_wallet_id", "asset", "amount"],
         "type": "object"
       },
       "CreateTrustlineRequest": {
@@ -1077,10 +1004,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "asset_code",
-          "asset_issuer"
-        ],
+        "required": ["asset_code", "asset_issuer"],
         "type": "object"
       },
       "DailySummaryRow": {
@@ -1191,18 +1115,11 @@
                 "type": "integer"
               }
             },
-            "required": [
-              "code",
-              "message",
-              "status",
-              "request_id"
-            ],
+            "required": ["code", "message", "status", "request_id"],
             "type": "object"
           }
         },
-        "required": [
-          "error"
-        ],
+        "required": ["error"],
         "type": "object"
       },
       "FeeCollectionSummary": {
@@ -1270,11 +1187,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "completed",
-              "failed"
-            ],
+            "enum": ["pending", "completed", "failed"],
             "type": "string"
           },
           "usdc_amount": {
@@ -1304,12 +1217,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "amount",
-          "currency",
-          "email",
-          "name"
-        ],
+        "required": ["amount", "currency", "email", "name"],
         "type": "object"
       },
       "FiatQuotePreviewResponse": {
@@ -1367,11 +1275,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "completed",
-              "failed"
-            ],
+            "enum": ["pending", "completed", "failed"],
             "type": "string"
           },
           "usdc_amount": {
@@ -1399,31 +1303,20 @@
             "type": "string"
           }
         },
-        "required": [
-          "amount",
-          "currency",
-          "account_bank",
-          "account_number"
-        ],
+        "required": ["amount", "currency", "account_bank", "account_number"],
         "type": "object"
       },
       "HealthResponse": {
         "properties": {
           "services": {
             "additionalProperties": {
-              "enum": [
-                "up",
-                "down"
-              ],
+              "enum": ["up", "down"],
               "type": "string"
             },
             "type": "object"
           },
           "status": {
-            "enum": [
-              "ok",
-              "degraded"
-            ],
+            "enum": ["ok", "degraded"],
             "type": "string"
           }
         },
@@ -1465,20 +1358,12 @@
           },
           "status": {
             "description": "Current lifecycle state of the key",
-            "enum": [
-              "processing",
-              "completed",
-              "failed",
-              "unknown"
-            ],
+            "enum": ["processing", "completed", "failed", "unknown"],
             "example": "completed",
             "type": "string"
           }
         },
-        "required": [
-          "key",
-          "status"
-        ],
+        "required": ["key", "status"],
         "type": "object"
       },
       "IdempotencyStoredResponse": {
@@ -1516,11 +1401,7 @@
             "type": "integer"
           }
         },
-        "required": [
-          "status",
-          "body_truncated",
-          "body_size_bytes"
-        ],
+        "required": ["status", "body_truncated", "body_size_bytes"],
         "type": "object"
       },
       "LiveClaimableBalanceResponse": {
@@ -1572,10 +1453,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "email",
-          "password"
-        ],
+        "required": ["email", "password"],
         "type": "object"
       },
       "MetricsResponse": {
@@ -1660,11 +1538,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "from_asset",
-          "to_asset",
-          "amount"
-        ],
+        "required": ["from_asset", "to_asset", "amount"],
         "type": "object"
       },
       "RateResponse": {
@@ -1748,11 +1622,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "name",
-          "email",
-          "password"
-        ],
+        "required": ["name", "email", "password"],
         "type": "object"
       },
       "RegisterWebhookRequest": {
@@ -1776,9 +1646,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "url"
-        ],
+        "required": ["url"],
         "type": "object"
       },
       "RotateWebhookSigningSecretRequest": {
@@ -1799,9 +1667,7 @@
           },
           {
             "type": "object",
-            "required": [
-              "secret"
-            ],
+            "required": ["secret"],
             "properties": {
               "secret": {
                 "type": "string",
@@ -1838,10 +1704,7 @@
                 "type": "string"
               },
               "status": {
-                "enum": [
-                  "success",
-                  "failed"
-                ],
+                "enum": ["success", "failed"],
                 "type": "string"
               }
             },
@@ -1879,11 +1742,7 @@
             "type": "string"
           },
           "frequency": {
-            "enum": [
-              "daily",
-              "weekly",
-              "monthly"
-            ],
+            "enum": ["daily", "weekly", "monthly"],
             "type": "string"
           },
           "from_wallet_id": {
@@ -1893,10 +1752,7 @@
             "type": "string"
           },
           "missed_run_policy": {
-            "enum": [
-              "skip",
-              "run_once"
-            ],
+            "enum": ["skip", "run_once"],
             "type": "string"
           },
           "next_run_at": {
@@ -1904,14 +1760,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "active",
-              "processing",
-              "failed",
-              "paused",
-              "cancelled",
-              "completed"
-            ],
+            "enum": ["active", "processing", "failed", "paused", "cancelled", "completed"],
             "type": "string"
           },
           "timezone": {
@@ -1952,14 +1801,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "running",
-              "succeeded",
-              "failed",
-              "skipped",
-              "cancelled"
-            ],
+            "enum": ["pending", "running", "succeeded", "failed", "skipped", "cancelled"],
             "type": "string"
           },
           "transaction_id": {
@@ -2025,13 +1867,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "submitted",
-              "confirmed",
-              "failed",
-              "reconciliation_failed"
-            ],
+            "enum": ["pending", "submitted", "confirmed", "failed", "reconciliation_failed"],
             "type": "string"
           },
           "tags": {
@@ -2048,11 +1884,7 @@
             "type": "string"
           },
           "type": {
-            "enum": [
-              "transfer",
-              "conversion",
-              "funding"
-            ],
+            "enum": ["transfer", "conversion", "funding"],
             "type": "string"
           }
         },
@@ -2067,9 +1899,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "submitted"
-            ],
+            "enum": ["submitted"],
             "type": "string"
           },
           "wallet_id": {
@@ -2089,26 +1919,16 @@
             "type": "string"
           },
           "frequency": {
-            "enum": [
-              "daily",
-              "weekly",
-              "monthly"
-            ],
+            "enum": ["daily", "weekly", "monthly"],
             "type": "string"
           },
           "missed_run_policy": {
-            "enum": [
-              "skip",
-              "run_once"
-            ],
+            "enum": ["skip", "run_once"],
             "type": "string"
           },
           "status": {
             "description": "Pause or resume the schedule",
-            "enum": [
-              "active",
-              "paused"
-            ],
+            "enum": ["active", "paused"],
             "type": "string"
           },
           "timezone": {
@@ -2220,11 +2040,7 @@
             "type": "integer"
           },
           "status": {
-            "enum": [
-              "pending",
-              "success",
-              "failed"
-            ],
+            "enum": ["pending", "success", "failed"],
             "type": "string"
           }
         },
@@ -2306,20 +2122,11 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "active",
-              "overlapping",
-              "retired"
-            ],
+            "enum": ["active", "overlapping", "retired"],
             "type": "string"
           }
         },
-        "required": [
-          "key_id",
-          "created_at",
-          "activated_at",
-          "status"
-        ],
+        "required": ["key_id", "created_at", "activated_at", "status"],
         "type": "object"
       },
       "WebhookSigningSecretsResponse": {
@@ -2331,9 +2138,7 @@
             "type": "array"
           }
         },
-        "required": [
-          "secrets"
-        ],
+        "required": ["secrets"],
         "type": "object"
       },
       "WithdrawalResponse": {
@@ -2343,11 +2148,7 @@
             "type": "string"
           },
           "status": {
-            "enum": [
-              "pending",
-              "completed",
-              "failed"
-            ],
+            "enum": ["pending", "completed", "failed"],
             "type": "string"
           }
         },
@@ -2445,9 +2246,7 @@
         },
         "security": [],
         "summary": "API root",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     },
     "/docs": {
@@ -2474,9 +2273,7 @@
         },
         "security": [],
         "summary": "Interactive Swagger UI documentation",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     },
     "/docs/openapi.yaml": {
@@ -2503,9 +2300,7 @@
         },
         "security": [],
         "summary": "OpenAPI specification",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     },
     "/health": {
@@ -2553,9 +2348,7 @@
         },
         "security": [],
         "summary": "Health check",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     },
     "/metrics": {
@@ -2594,9 +2387,7 @@
         },
         "security": [],
         "summary": "Server metrics",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     },
     "/v1/admin/compliance/reviews": {
@@ -2610,11 +2401,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "pending",
-                "approved",
-                "rejected"
-              ]
+              "enum": ["pending", "approved", "rejected"]
             },
             "description": "Filter by review status"
           },
@@ -2675,9 +2462,7 @@
           }
         ],
         "summary": "List compliance reviews",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/compliance/reviews/{id}": {
@@ -2724,9 +2509,7 @@
           }
         ],
         "summary": "Get a compliance review",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/compliance/reviews/{id}/approve": {
@@ -2808,9 +2591,7 @@
           }
         ],
         "summary": "Approve a held transfer",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/compliance/reviews/{id}/reject": {
@@ -2891,9 +2672,7 @@
           }
         ],
         "summary": "Reject a held transfer",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/compliance/sanctions-status": {
@@ -2940,9 +2719,7 @@
           }
         ],
         "summary": "Get sanctions list status",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/fees/collected": {
@@ -3058,9 +2835,7 @@
           }
         ],
         "summary": "List collected fees",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/reconciliation/discrepancies": {
@@ -3072,11 +2847,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": [
-                "open",
-                "acknowledged",
-                "resolved"
-              ]
+              "enum": ["open", "acknowledged", "resolved"]
             }
           },
           {
@@ -3124,9 +2895,7 @@
           }
         ],
         "summary": "List tenant reconciliation discrepancies",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/reconciliation/discrepancies/summary": {
@@ -3154,9 +2923,7 @@
           }
         ],
         "summary": "Get unresolved reconciliation discrepancy metrics",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/reconciliation/discrepancies/{id}": {
@@ -3179,12 +2946,7 @@
               "schema": {
                 "properties": {
                   "action": {
-                    "enum": [
-                      "acknowledged",
-                      "assigned",
-                      "annotated",
-                      "resolved"
-                    ],
+                    "enum": ["acknowledged", "assigned", "annotated", "resolved"],
                     "type": "string"
                   },
                   "assigned_to": {
@@ -3195,9 +2957,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "action"
-                ],
+                "required": ["action"],
                 "type": "object"
               }
             }
@@ -3227,9 +2987,7 @@
           }
         ],
         "summary": "Acknowledge, assign, annotate, or resolve a discrepancy",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/reconciliation/run": {
@@ -3246,9 +3004,7 @@
                       "type": "string"
                     },
                     "status": {
-                      "enum": [
-                        "started"
-                      ],
+                      "enum": ["started"],
                       "type": "string"
                     }
                   },
@@ -3274,9 +3030,7 @@
           }
         ],
         "summary": "Trigger a reconciliation run",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/reconciliation/summary": {
@@ -3344,9 +3098,7 @@
           }
         ],
         "summary": "Get reconciliation summary",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/admin/transfers/{transferID}/force-settle": {
@@ -3371,9 +3123,7 @@
                 "schema": {
                   "properties": {
                     "status": {
-                      "enum": [
-                        "retry_queued"
-                      ],
+                      "enum": ["retry_queued"],
                       "type": "string"
                     },
                     "transfer_id": {
@@ -3381,10 +3131,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "status",
-                    "transfer_id"
-                  ],
+                  "required": ["status", "transfer_id"],
                   "type": "object"
                 }
               }
@@ -3420,9 +3167,7 @@
           }
         ],
         "summary": "Retry a failed settlement",
-        "tags": [
-          "Admin"
-        ]
+        "tags": ["Admin"]
       }
     },
     "/v1/audit": {
@@ -3529,9 +3274,7 @@
           }
         },
         "summary": "List audit events",
-        "tags": [
-          "Audit"
-        ]
+        "tags": ["Audit"]
       }
     },
     "/v1/audit/export": {
@@ -3545,10 +3288,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "csv",
-                "json"
-              ],
+              "enum": ["csv", "json"],
               "default": "json"
             },
             "description": "Export format"
@@ -3640,9 +3380,7 @@
           }
         },
         "summary": "Export audit events",
-        "tags": [
-          "Audit"
-        ]
+        "tags": ["Audit"]
       }
     },
     "/v1/auth/login": {
@@ -3690,9 +3428,7 @@
         },
         "security": [],
         "summary": "Login and issue a new API key",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/v1/auth/register": {
@@ -3740,9 +3476,7 @@
         },
         "security": [],
         "summary": "Register a new tenant",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/v1/beneficiaries": {
@@ -3775,9 +3509,7 @@
           }
         },
         "summary": "List beneficiaries",
-        "tags": [
-          "Beneficiaries"
-        ]
+        "tags": ["Beneficiaries"]
       },
       "post": {
         "description": "Creates a pending beneficiary. Activation is blocked until the 24-hour cooling-off period ends.",
@@ -3817,9 +3549,7 @@
           }
         },
         "summary": "Create a beneficiary",
-        "tags": [
-          "Beneficiaries"
-        ]
+        "tags": ["Beneficiaries"]
       }
     },
     "/v1/beneficiaries/{id}": {
@@ -3845,9 +3575,7 @@
           }
         },
         "summary": "Revoke a beneficiary",
-        "tags": [
-          "Beneficiaries"
-        ]
+        "tags": ["Beneficiaries"]
       },
       "get": {
         "operationId": "getBeneficiary",
@@ -3878,9 +3606,7 @@
           }
         },
         "summary": "Get a beneficiary",
-        "tags": [
-          "Beneficiaries"
-        ]
+        "tags": ["Beneficiaries"]
       }
     },
     "/v1/beneficiaries/{id}/activate": {
@@ -3913,9 +3639,7 @@
           }
         },
         "summary": "Activate a beneficiary after its cooling-off period",
-        "tags": [
-          "Beneficiaries"
-        ]
+        "tags": ["Beneficiaries"]
       }
     },
     "/v1/claimable-balances": {
@@ -3928,12 +3652,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": [
-                "pending",
-                "claimed",
-                "revoked",
-                "expired"
-              ]
+              "enum": ["pending", "claimed", "revoked", "expired"]
             },
             "description": "Only return balances in this state"
           },
@@ -4010,9 +3729,7 @@
           }
         },
         "summary": "List claimable balances",
-        "tags": [
-          "Claimable balances"
-        ]
+        "tags": ["Claimable balances"]
       },
       "post": {
         "description": "Creates a deferred payment held by the Stellar network until one of its\nclaimants satisfies their predicate. The org's source wallet funds it,\nunless `sponsor_account` names a Fluxa-custodied wallet, in which case\nthe creation is wrapped in BeginSponsoringFutureReserves /\nEndSponsoringFutureReserves and the sponsor pays the 0.5 XLM entry\nreserve.\n\nThe returned `balance_id` is derived from the create operation, so it is\navailable without a second Horizon round trip.\n",
@@ -4082,9 +3799,7 @@
           }
         },
         "summary": "Create a claimable balance",
-        "tags": [
-          "Claimable balances"
-        ]
+        "tags": ["Claimable balances"]
       }
     },
     "/v1/claimable-balances/{id}": {
@@ -4118,9 +3833,7 @@
           }
         },
         "summary": "Get a claimable balance",
-        "tags": [
-          "Claimable balances"
-        ]
+        "tags": ["Claimable balances"]
       }
     },
     "/v1/claimable-balances/{id}/claim": {
@@ -4190,9 +3903,7 @@
           }
         },
         "summary": "Claim a claimable balance",
-        "tags": [
-          "Claimable balances"
-        ]
+        "tags": ["Claimable balances"]
       }
     },
     "/v1/fees": {
@@ -4225,9 +3936,7 @@
           }
         },
         "summary": "Get fee schedule",
-        "tags": [
-          "Fees"
-        ]
+        "tags": ["Fees"]
       }
     },
     "/v1/fees/preview": {
@@ -4246,18 +3955,11 @@
                     "type": "string"
                   },
                   "type": {
-                    "enum": [
-                      "transfer",
-                      "conversion"
-                    ],
+                    "enum": ["transfer", "conversion"],
                     "type": "string"
                   }
                 },
-                "required": [
-                  "type",
-                  "asset",
-                  "amount"
-                ],
+                "required": ["type", "asset", "amount"],
                 "type": "object"
               }
             }
@@ -4300,9 +4002,7 @@
           }
         },
         "summary": "Preview fees",
-        "tags": [
-          "Fees"
-        ]
+        "tags": ["Fees"]
       }
     },
     "/v1/fiat/quote": {
@@ -4324,19 +4024,11 @@
                     "type": "string"
                   },
                   "side": {
-                    "enum": [
-                      "deposit",
-                      "withdraw"
-                    ],
+                    "enum": ["deposit", "withdraw"],
                     "type": "string"
                   }
                 },
-                "required": [
-                  "side",
-                  "amount",
-                  "currency",
-                  "country"
-                ],
+                "required": ["side", "amount", "currency", "country"],
                 "type": "object"
               }
             }
@@ -4365,9 +4057,7 @@
           }
         },
         "summary": "Preview a fiat deposit or withdrawal",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/fx/convert": {
@@ -4441,9 +4131,7 @@
           }
         },
         "summary": "Execute a conversion",
-        "tags": [
-          "FX"
-        ]
+        "tags": ["FX"]
       }
     },
     "/v1/fx/quote": {
@@ -4499,9 +4187,7 @@
           }
         },
         "summary": "Get an FX quote",
-        "tags": [
-          "FX"
-        ]
+        "tags": ["FX"]
       }
     },
     "/v1/fx/rates": {
@@ -4563,9 +4249,7 @@
           }
         },
         "summary": "Get exchange rate",
-        "tags": [
-          "FX"
-        ]
+        "tags": ["FX"]
       }
     },
     "/v1/idempotency/{key}": {
@@ -4619,9 +4303,7 @@
           }
         ],
         "summary": "Inspect idempotency key state",
-        "tags": [
-          "Idempotency"
-        ]
+        "tags": ["Idempotency"]
       }
     },
     "/v1/keys": {
@@ -4637,10 +4319,7 @@
                     "id": "k_9a8b7c6d",
                     "prefix": "sk_live_a1b2",
                     "label": "CI deploy key",
-                    "scopes": [
-                      "wallets:read",
-                      "transfers:read"
-                    ],
+                    "scopes": ["wallets:read", "transfers:read"],
                     "last_used_at": "2026-01-15T12:00:00Z",
                     "revoked_at": null,
                     "created_at": "2026-01-15T10:00:00Z"
@@ -4664,9 +4343,7 @@
           }
         },
         "summary": "List API keys",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       },
       "post": {
         "description": "Generates a new API key for the authenticated tenant. The raw key is\nreturned only in this response — it cannot be retrieved later.\n",
@@ -4676,11 +4353,7 @@
             "application/json": {
               "example": {
                 "label": "Payouts integration",
-                "scopes": [
-                  "wallets:read",
-                  "transfers:read",
-                  "batches:write"
-                ]
+                "scopes": ["wallets:read", "transfers:read", "batches:write"]
               },
               "schema": {
                 "$ref": "#/components/schemas/CreateKeyRequest"
@@ -4698,11 +4371,7 @@
                   "key": "sk_live_a1b2c3d4e5f6g7h8",
                   "label": "Payouts integration",
                   "prefix": "sk_live_a1b2",
-                  "scopes": [
-                    "wallets:read",
-                    "transfers:read",
-                    "batches:write"
-                  ]
+                  "scopes": ["wallets:read", "transfers:read", "batches:write"]
                 },
                 "schema": {
                   "$ref": "#/components/schemas/APIKeyCreated"
@@ -4738,9 +4407,7 @@
           }
         },
         "summary": "Create an API key",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/v1/keys/{id}": {
@@ -4767,9 +4434,7 @@
           }
         },
         "summary": "Revoke an API key",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/v1/schedules": {
@@ -4806,9 +4471,7 @@
           }
         },
         "summary": "List schedules",
-        "tags": [
-          "Schedules"
-        ]
+        "tags": ["Schedules"]
       },
       "post": {
         "description": "Creates a tenant-scoped recurring payout that runs daily, weekly, or monthly. Requires transfers:write scope and a UUID v4 Idempotency-Key; retries with the same key and body replay the original response.",
@@ -4874,9 +4537,7 @@
           }
         },
         "summary": "Create a recurring tenant payout schedule",
-        "tags": [
-          "Schedules"
-        ]
+        "tags": ["Schedules"]
       }
     },
     "/v1/schedules/{id}": {
@@ -4906,9 +4567,7 @@
           }
         },
         "summary": "Cancel a schedule",
-        "tags": [
-          "Schedules"
-        ]
+        "tags": ["Schedules"]
       },
       "patch": {
         "description": "Updates the amount, recurrence settings, or status. Requires transfers:write scope.",
@@ -4960,9 +4619,7 @@
           }
         },
         "summary": "Update a schedule",
-        "tags": [
-          "Schedules"
-        ]
+        "tags": ["Schedules"]
       }
     },
     "/v1/schedules/{id}/runs": {
@@ -5024,9 +4681,7 @@
           }
         },
         "summary": "List payout attempts for a schedule",
-        "tags": [
-          "Schedules"
-        ]
+        "tags": ["Schedules"]
       }
     },
     "/v1/transfers": {
@@ -5113,9 +4768,7 @@
           }
         },
         "summary": "List transfers",
-        "tags": [
-          "Transactions"
-        ]
+        "tags": ["Transactions"]
       },
       "post": {
         "description": "Moves an asset between two wallets, applying platform fees.",
@@ -5197,9 +4850,7 @@
           }
         },
         "summary": "Initiate a transfer",
-        "tags": [
-          "Transfers"
-        ]
+        "tags": ["Transfers"]
       }
     },
     "/v1/transfers/batch": {
@@ -5270,9 +4921,7 @@
           }
         },
         "summary": "Create a batch transfer",
-        "tags": [
-          "Transfers"
-        ]
+        "tags": ["Transfers"]
       }
     },
     "/v1/transfers/batch/{batchId}": {
@@ -5312,9 +4961,7 @@
           }
         },
         "summary": "Get batch status",
-        "tags": [
-          "Transfers"
-        ]
+        "tags": ["Transfers"]
       }
     },
     "/v1/transfers/batch/{batchId}/export": {
@@ -5355,9 +5002,7 @@
           }
         },
         "summary": "Export batch as CSV",
-        "tags": [
-          "Transfers"
-        ]
+        "tags": ["Transfers"]
       }
     },
     "/v1/transfers/{id}": {
@@ -5397,9 +5042,7 @@
           }
         },
         "summary": "Get transfer details",
-        "tags": [
-          "Transfers"
-        ]
+        "tags": ["Transfers"]
       }
     },
     "/v1/usage": {
@@ -5425,9 +5068,7 @@
           }
         },
         "summary": "Get API usage",
-        "tags": [
-          "Fees"
-        ]
+        "tags": ["Fees"]
       }
     },
     "/v1/wallets": {
@@ -5458,9 +5099,7 @@
           }
         },
         "summary": "Create a wallet",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/wallets/{id}": {
@@ -5499,9 +5138,7 @@
           }
         },
         "summary": "Get wallet details",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/wallets/{id}/balances": {
@@ -5550,9 +5187,7 @@
           }
         },
         "summary": "Get wallet balances",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/wallets/{id}/deposit/fiat": {
@@ -5606,9 +5241,7 @@
           }
         },
         "summary": "Initiate a fiat deposit",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/wallets/{id}/trustlines": {
@@ -5663,9 +5296,7 @@
           }
         },
         "summary": "Establish a trustline",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/wallets/{id}/withdraw/fiat": {
@@ -5741,9 +5372,7 @@
           }
         },
         "summary": "Initiate a fiat withdrawal",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     },
     "/v1/webhooks": {
@@ -5777,9 +5406,7 @@
           }
         },
         "summary": "List webhook endpoints",
-        "tags": [
-          "Webhooks"
-        ]
+        "tags": ["Webhooks"]
       },
       "post": {
         "description": "Registers a new webhook endpoint. A signing secret is generated and\nreturned — it will be used to sign webhook payloads via HMAC-SHA256.\n",
@@ -5788,10 +5415,7 @@
           "content": {
             "application/json": {
               "example": {
-                "events": [
-                  "transfer.initiated",
-                  "transfer.settled"
-                ],
+                "events": ["transfer.initiated", "transfer.settled"],
                 "url": "https://acme.com/hooks/fluxa"
               },
               "schema": {
@@ -5808,10 +5432,7 @@
                 "example": {
                   "active": true,
                   "created_at": "2026-01-15T10:00:00Z",
-                  "events": [
-                    "transfer.initiated",
-                    "transfer.settled"
-                  ],
+                  "events": ["transfer.initiated", "transfer.settled"],
                   "id": "wh_abc123",
                   "secret": "whsec_abc123def456",
                   "url": "https://acme.com/hooks/fluxa"
@@ -5834,9 +5455,7 @@
           }
         },
         "summary": "Register a webhook endpoint",
-        "tags": [
-          "Webhooks"
-        ]
+        "tags": ["Webhooks"]
       }
     },
     "/v1/webhooks/fiat/{provider}": {
@@ -5893,9 +5512,7 @@
           }
         },
         "summary": "Handle a fiat provider webhook",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     },
     "/v1/webhooks/secret": {
@@ -5924,9 +5541,7 @@
           }
         },
         "summary": "Inspect webhook signing secret versions",
-        "tags": [
-          "Webhooks"
-        ]
+        "tags": ["Webhooks"]
       }
     },
     "/v1/webhooks/secret/rotate": {
@@ -5988,9 +5603,7 @@
           }
         },
         "summary": "Rotate the tenant webhook signing secret",
-        "tags": [
-          "Webhooks"
-        ]
+        "tags": ["Webhooks"]
       }
     },
     "/v1/webhooks/{id}": {
@@ -6017,9 +5630,7 @@
           }
         },
         "summary": "Delete a webhook endpoint",
-        "tags": [
-          "Webhooks"
-        ]
+        "tags": ["Webhooks"]
       }
     },
     "/v1/webhooks/{id}/deliveries": {
@@ -6079,9 +5690,7 @@
           }
         },
         "summary": "List webhook deliveries",
-        "tags": [
-          "Webhooks"
-        ]
+        "tags": ["Webhooks"]
       }
     },
     "/v1/withdrawals": {
@@ -6131,13 +5740,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "wallet_id",
-                  "amount",
-                  "currency",
-                  "account_bank",
-                  "account_number"
-                ],
+                "required": ["wallet_id", "amount", "currency", "account_bank", "account_number"],
                 "type": "object"
               }
             }
@@ -6169,9 +5772,7 @@
           }
         },
         "summary": "Initiate a withdrawal",
-        "tags": [
-          "Wallets"
-        ]
+        "tags": ["Wallets"]
       }
     }
   },

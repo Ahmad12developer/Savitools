@@ -37,11 +37,7 @@
             "type": "string"
           },
           "severity": {
-            "enum": [
-              "info",
-              "warning",
-              "critical"
-            ],
+            "enum": ["info", "warning", "critical"],
             "type": "string"
           },
           "updated_at": {
@@ -82,17 +78,11 @@
           },
           "severity": {
             "default": "info",
-            "enum": [
-              "info",
-              "warning",
-              "critical"
-            ],
+            "enum": ["info", "warning", "critical"],
             "type": "string"
           }
         },
-        "required": [
-          "message"
-        ],
+        "required": ["message"],
         "type": "object"
       },
       "CampaignCommunicationPreferencePatch": {
@@ -173,12 +163,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "key",
-          "enabled",
-          "default_enabled",
-          "updated_at"
-        ],
+        "required": ["key", "enabled", "default_enabled", "updated_at"],
         "type": "object"
       },
       "FeatureFlagToggleRequest": {
@@ -187,9 +172,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "enabled"
-        ],
+        "required": ["enabled"],
         "type": "object"
       },
       "OutcomeSurvey": {
@@ -242,11 +225,7 @@
             "type": "array"
           },
           "status": {
-            "enum": [
-              "draft",
-              "open",
-              "closed"
-            ],
+            "enum": ["draft", "open", "closed"],
             "type": "string"
           },
           "title": {
@@ -279,9 +258,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "title"
-        ],
+        "required": ["title"],
         "type": "object"
       },
       "OutcomeSurveyQuestion": {
@@ -306,20 +283,11 @@
             "type": "boolean"
           },
           "type": {
-            "enum": [
-              "rating",
-              "single_choice",
-              "text"
-            ],
+            "enum": ["rating", "single_choice", "text"],
             "type": "string"
           }
         },
-        "required": [
-          "id",
-          "prompt",
-          "type",
-          "required"
-        ],
+        "required": ["id", "prompt", "type", "required"],
         "type": "object"
       }
     },
@@ -401,9 +369,7 @@
           }
         ],
         "summary": "List all feature flags with full details (admin only)",
-        "tags": [
-          "Admin — Feature Flags"
-        ]
+        "tags": ["Admin — Feature Flags"]
       }
     },
     "/api/admin/feature-flags/{key}": {
@@ -458,9 +424,7 @@
           }
         ],
         "summary": "Toggle a feature flag (admin only)",
-        "tags": [
-          "Admin — Feature Flags"
-        ]
+        "tags": ["Admin — Feature Flags"]
       }
     },
     "/api/admin/fraud/contributions/{id}/resolve": {
@@ -542,9 +506,7 @@
           }
         },
         "summary": "List active platform announcements",
-        "tags": [
-          "Announcements"
-        ]
+        "tags": ["Announcements"]
       }
     },
     "/api/announcements/create": {
@@ -583,9 +545,7 @@
           }
         ],
         "summary": "Create a platform announcement",
-        "tags": [
-          "Announcements"
-        ]
+        "tags": ["Announcements"]
       }
     },
     "/api/announcements/{id}/deactivate": {
@@ -628,9 +588,7 @@
           }
         ],
         "summary": "Deactivate a platform announcement",
-        "tags": [
-          "Announcements"
-        ]
+        "tags": ["Announcements"]
       }
     },
     "/api/auth/login": {
@@ -648,10 +606,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "email",
-                  "password"
-                ],
+                "required": ["email", "password"],
                 "type": "object"
               }
             }
@@ -699,10 +654,7 @@
                       "type": "object"
                     }
                   },
-                  "required": [
-                    "token",
-                    "user"
-                  ],
+                  "required": ["token", "user"],
                   "type": "object"
                 }
               }
@@ -726,9 +678,7 @@
           }
         },
         "summary": "Login",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/auth/login-alerts": {
@@ -753,9 +703,7 @@
           }
         ],
         "summary": "List login alerts for current user",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/auth/login-alerts/{id}/acknowledge": {
@@ -781,9 +729,7 @@
           }
         ],
         "summary": "Acknowledge a login alert",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/auth/login-attempts": {
@@ -799,9 +745,7 @@
           }
         ],
         "summary": "List login attempts for current user",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/auth/register": {
@@ -823,18 +767,11 @@
                     "type": "string"
                   },
                   "role": {
-                    "enum": [
-                      "contributor",
-                      "creator"
-                    ],
+                    "enum": ["contributor", "creator"],
                     "type": "string"
                   }
                 },
-                "required": [
-                  "email",
-                  "password",
-                  "name"
-                ],
+                "required": ["email", "password", "name"],
                 "type": "object"
               }
             }
@@ -882,10 +819,7 @@
                       "type": "object"
                     }
                   },
-                  "required": [
-                    "token",
-                    "user"
-                  ],
+                  "required": ["token", "user"],
                   "type": "object"
                 }
               }
@@ -909,9 +843,7 @@
           }
         },
         "summary": "Register a new user",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/auth/sessions": {
@@ -960,9 +892,7 @@
           }
         ],
         "summary": "List active sessions for current user",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/auth/sessions/{id}": {
@@ -1003,9 +933,7 @@
           }
         ],
         "summary": "Revoke a specific session",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/campaigns": {
@@ -1087,9 +1015,7 @@
           }
         },
         "summary": "List campaigns",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       },
       "post": {
         "requestBody": {
@@ -1134,11 +1060,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "title",
-                  "target_amount",
-                  "asset_type"
-                ],
+                "required": ["title", "target_amount", "asset_type"],
                 "type": "object"
               }
             }
@@ -1162,9 +1084,7 @@
           }
         ],
         "summary": "Create campaign",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/bulk/import": {
@@ -1175,9 +1095,7 @@
           }
         ],
         "summary": "Initiate asynchronous bulk campaign creation from CSV",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/bulk/jobs/{jobId}": {
@@ -1188,17 +1106,13 @@
           }
         ],
         "summary": "Check progress and results of a bulk campaign import job",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/bulk/template": {
       "get": {
         "summary": "Download CSV template for bulk campaign creation",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/bulk/validate": {
@@ -1209,9 +1123,7 @@
           }
         ],
         "summary": "Pre-validate a CSV file before bulk campaign import",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/communication-preferences/channels": {
@@ -1223,9 +1135,7 @@
           }
         },
         "summary": "List the communication channels this build supports",
-        "tags": [
-          "Campaigns — Communication Preferences"
-        ]
+        "tags": ["Campaigns — Communication Preferences"]
       }
     },
     "/api/campaigns/{campaignId}/communication-preferences": {
@@ -1265,9 +1175,7 @@
           }
         ],
         "summary": "Reset preferences for this campaign back to the defaults",
-        "tags": [
-          "Campaigns — Communication Preferences"
-        ]
+        "tags": ["Campaigns — Communication Preferences"]
       },
       "get": {
         "description": "Resolves to the defaults when the contributor has no override row for this campaign, so clients never have to special-case a 404 on the preference resource.",
@@ -1306,9 +1214,7 @@
           }
         ],
         "summary": "Read the authenticated contributor's per-campaign preferences",
-        "tags": [
-          "Campaigns — Communication Preferences"
-        ]
+        "tags": ["Campaigns — Communication Preferences"]
       },
       "patch": {
         "parameters": [
@@ -1365,9 +1271,7 @@
           }
         ],
         "summary": "Alias for PUT (the endpoint is a partial update either way)",
-        "tags": [
-          "Campaigns — Communication Preferences"
-        ]
+        "tags": ["Campaigns — Communication Preferences"]
       },
       "put": {
         "parameters": [
@@ -1424,9 +1328,7 @@
           }
         ],
         "summary": "Set one or more per-campaign communication preferences",
-        "tags": [
-          "Campaigns — Communication Preferences"
-        ]
+        "tags": ["Campaigns — Communication Preferences"]
       }
     },
     "/api/campaigns/{campaignId}/outcome-survey": {
@@ -1457,9 +1359,7 @@
           }
         ],
         "summary": "Read the campaign's outcome survey and aggregate response count",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       },
       "post": {
         "parameters": [
@@ -1509,9 +1409,7 @@
           }
         ],
         "summary": "Create the campaign's outcome survey as a draft",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       },
       "put": {
         "parameters": [
@@ -1558,9 +1456,7 @@
           }
         ],
         "summary": "Edit the survey while it is still a draft",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       }
     },
     "/api/campaigns/{campaignId}/outcome-survey/close": {
@@ -1596,9 +1492,7 @@
           }
         ],
         "summary": "Stop accepting responses",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       }
     },
     "/api/campaigns/{campaignId}/outcome-survey/events": {
@@ -1631,9 +1525,7 @@
           }
         ],
         "summary": "Lifecycle audit trail for the survey",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       }
     },
     "/api/campaigns/{campaignId}/outcome-survey/open": {
@@ -1689,9 +1581,7 @@
           }
         ],
         "summary": "Publish the survey and invite eligible backers",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       }
     },
     "/api/campaigns/{campaignId}/outcome-survey/respond": {
@@ -1718,9 +1608,7 @@
                     "type": "object"
                   }
                 },
-                "required": [
-                  "answers"
-                ],
+                "required": ["answers"],
                 "type": "object"
               }
             }
@@ -1759,9 +1647,7 @@
           }
         ],
         "summary": "Submit this backer's answers",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       }
     },
     "/api/campaigns/{campaignId}/outcome-survey/results": {
@@ -1795,9 +1681,7 @@
           }
         ],
         "summary": "Aggregated results for the campaign team",
-        "tags": [
-          "Campaigns — Outcome Surveys"
-        ]
+        "tags": ["Campaigns — Outcome Surveys"]
       }
     },
     "/api/campaigns/{id}": {
@@ -1821,9 +1705,7 @@
           }
         },
         "summary": "Get campaign by id",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/balance": {
@@ -1865,9 +1747,7 @@
           }
         },
         "summary": "Get live on-chain balance for a campaign wallet",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/matches": {
@@ -1891,9 +1771,7 @@
           }
         },
         "summary": "Get campaign matching progress",
-        "tags": [
-          "Sponsor Matching"
-        ]
+        "tags": ["Sponsor Matching"]
       },
       "post": {
         "parameters": [
@@ -1922,10 +1800,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "match_ratio",
-                  "pledge_amount"
-                ],
+                "required": ["match_ratio", "pledge_amount"],
                 "type": "object"
               }
             }
@@ -1955,9 +1830,7 @@
           }
         ],
         "summary": "Create sponsor matching pledge",
-        "tags": [
-          "Sponsor Matching"
-        ]
+        "tags": ["Sponsor Matching"]
       }
     },
     "/api/campaigns/{id}/matches/{matchId}/complete": {
@@ -2000,9 +1873,7 @@
           }
         ],
         "summary": "Complete a matching pledge",
-        "tags": [
-          "Sponsor Matching"
-        ]
+        "tags": ["Sponsor Matching"]
       }
     },
     "/api/campaigns/{id}/payout-schedules": {
@@ -2013,10 +1884,7 @@
           }
         ],
         "summary": "List recurring payout schedules for a campaign",
-        "tags": [
-          "Withdrawals",
-          "PayoutSchedules"
-        ]
+        "tags": ["Withdrawals", "PayoutSchedules"]
       },
       "post": {
         "security": [
@@ -2025,10 +1893,7 @@
           }
         ],
         "summary": "Create a recurring payout schedule",
-        "tags": [
-          "Withdrawals",
-          "PayoutSchedules"
-        ]
+        "tags": ["Withdrawals", "PayoutSchedules"]
       }
     },
     "/api/campaigns/{id}/payout-schedules/{scheduleId}": {
@@ -2039,10 +1904,7 @@
           }
         ],
         "summary": "Cancel a payout schedule",
-        "tags": [
-          "Withdrawals",
-          "PayoutSchedules"
-        ]
+        "tags": ["Withdrawals", "PayoutSchedules"]
       },
       "get": {
         "security": [
@@ -2051,10 +1913,7 @@
           }
         ],
         "summary": "Get payout schedule details and run history",
-        "tags": [
-          "Withdrawals",
-          "PayoutSchedules"
-        ]
+        "tags": ["Withdrawals", "PayoutSchedules"]
       }
     },
     "/api/campaigns/{id}/payout-schedules/{scheduleId}/pause": {
@@ -2065,10 +1924,7 @@
           }
         ],
         "summary": "Pause an active payout schedule",
-        "tags": [
-          "Withdrawals",
-          "PayoutSchedules"
-        ]
+        "tags": ["Withdrawals", "PayoutSchedules"]
       }
     },
     "/api/campaigns/{id}/payout-schedules/{scheduleId}/resume": {
@@ -2079,10 +1935,7 @@
           }
         ],
         "summary": "Resume a paused payout schedule",
-        "tags": [
-          "Withdrawals",
-          "PayoutSchedules"
-        ]
+        "tags": ["Withdrawals", "PayoutSchedules"]
       }
     },
     "/api/campaigns/{id}/referrals": {
@@ -2114,10 +1967,7 @@
                     "type": "integer"
                   }
                 },
-                "required": [
-                  "commissionPercentage",
-                  "maxReferrers"
-                ],
+                "required": ["commissionPercentage", "maxReferrers"],
                 "type": "object"
               }
             }
@@ -2144,9 +1994,7 @@
           }
         ],
         "summary": "Enable or update the campaign's referral program (creator only)",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/referrals/commissions": {
@@ -2179,9 +2027,7 @@
           }
         ],
         "summary": "Referrer breakdown with commission owed (creator only)",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/referrals/links": {
@@ -2234,9 +2080,7 @@
           }
         ],
         "summary": "Claim a trackable referral link for the authenticated user",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/referrals/program": {
@@ -2261,9 +2105,7 @@
           }
         },
         "summary": "Get the campaign's public referral program terms",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/subscriptions": {
@@ -2293,11 +2135,7 @@
                     "type": "string"
                   },
                   "periodMonths": {
-                    "enum": [
-                      1,
-                      3,
-                      6
-                    ],
+                    "enum": [1, 3, 6],
                     "type": "integer"
                   },
                   "totalPeriods": {
@@ -2310,12 +2148,7 @@
                     "type": "boolean"
                   }
                 },
-                "required": [
-                  "amountPerPeriod",
-                  "asset",
-                  "periodMonths",
-                  "totalPeriods"
-                ],
+                "required": ["amountPerPeriod", "asset", "periodMonths", "totalPeriods"],
                 "type": "object"
               }
             }
@@ -2340,9 +2173,7 @@
           }
         ],
         "summary": "Enable a recurring pledge on a campaign",
-        "tags": [
-          "Subscriptions"
-        ]
+        "tags": ["Subscriptions"]
       }
     },
     "/api/campaigns/{id}/subscriptions/prepare": {
@@ -2365,9 +2196,7 @@
           }
         ],
         "summary": "Prepare a recurring pledge for Freighter signing",
-        "tags": [
-          "Subscriptions"
-        ]
+        "tags": ["Subscriptions"]
       }
     },
     "/api/campaigns/{id}/subscriptions/submit": {
@@ -2387,10 +2216,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "unsignedXdr",
-                  "signedXdr"
-                ],
+                "required": ["unsignedXdr", "signedXdr"],
                 "type": "object"
               }
             }
@@ -2414,9 +2240,7 @@
           }
         ],
         "summary": "Submit a signed Freighter recurring pledge",
-        "tags": [
-          "Subscriptions"
-        ]
+        "tags": ["Subscriptions"]
       }
     },
     "/api/campaigns/{id}/subscriptions/{subscriptionId}": {
@@ -2456,9 +2280,7 @@
           }
         ],
         "summary": "Cancel a recurring pledge",
-        "tags": [
-          "Subscriptions"
-        ]
+        "tags": ["Subscriptions"]
       }
     },
     "/api/campaigns/{id}/thank-you": {
@@ -2490,9 +2312,7 @@
           }
         ],
         "summary": "List thank-you delivery history for a campaign",
-        "tags": [
-          "Thank You"
-        ]
+        "tags": ["Thank You"]
       }
     },
     "/api/campaigns/{id}/tiers": {
@@ -2516,9 +2336,7 @@
           }
         },
         "summary": "List a campaign's reward tiers with remaining availability",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       },
       "post": {
         "parameters": [
@@ -2551,9 +2369,7 @@
           }
         ],
         "summary": "Add one or more reward tiers to an existing campaign (creator only)",
-        "tags": [
-          "Campaigns"
-        ]
+        "tags": ["Campaigns"]
       }
     },
     "/api/campaigns/{id}/treasury/policy": {
@@ -2621,9 +2437,7 @@
           }
         ],
         "summary": "Set the Soroban treasury spending policy (creator only)",
-        "tags": [
-          "Treasury"
-        ]
+        "tags": ["Treasury"]
       }
     },
     "/api/campaigns/{id}/treasury/reconciliation": {
@@ -2649,9 +2463,7 @@
           }
         ],
         "summary": "Compare on-chain withdrawal history against the database (creator only)",
-        "tags": [
-          "Treasury"
-        ]
+        "tags": ["Treasury"]
       }
     },
     "/api/campaigns/{id}/treasury/refund": {
@@ -2681,9 +2493,7 @@
           }
         ],
         "summary": "Trigger the automatic refund for a missed goal",
-        "tags": [
-          "Treasury"
-        ]
+        "tags": ["Treasury"]
       }
     },
     "/api/campaigns/{id}/treasury/status": {
@@ -2711,9 +2521,7 @@
           }
         },
         "summary": "Live treasury state read from the contract",
-        "tags": [
-          "Treasury"
-        ]
+        "tags": ["Treasury"]
       }
     },
     "/api/campaigns/{id}/treasury/withdrawal": {
@@ -2747,10 +2555,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "amount",
-                  "destination"
-                ],
+                "required": ["amount", "destination"],
                 "type": "object"
               }
             }
@@ -2777,9 +2582,7 @@
           }
         ],
         "summary": "Request a withdrawal against the treasury policy (creator only)",
-        "tags": [
-          "Treasury"
-        ]
+        "tags": ["Treasury"]
       }
     },
     "/api/campaigns/{id}/treasury/withdrawal/{pendingId}/approve": {
@@ -2825,9 +2628,7 @@
           }
         ],
         "summary": "Auditor approval that releases a parked withdrawal",
-        "tags": [
-          "Treasury"
-        ]
+        "tags": ["Treasury"]
       }
     },
     "/api/categories": {
@@ -2863,9 +2664,7 @@
           }
         },
         "summary": "List followable campaign categories",
-        "tags": [
-          "Categories"
-        ]
+        "tags": ["Categories"]
       }
     },
     "/api/feature-flags": {
@@ -2886,9 +2685,7 @@
           }
         },
         "summary": "List all feature flags (public, only key + enabled)",
-        "tags": [
-          "Feature Flags"
-        ]
+        "tags": ["Feature Flags"]
       }
     },
     "/api/feature-flags/enabled": {
@@ -2909,9 +2706,7 @@
           }
         },
         "summary": "List only enabled feature flags (public)",
-        "tags": [
-          "Feature Flags"
-        ]
+        "tags": ["Feature Flags"]
       }
     },
     "/api/referrals/analytics": {
@@ -2927,9 +2722,7 @@
           }
         ],
         "summary": "Get referral analytics for authenticated user",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/referrals/fraud-checks": {
@@ -2945,9 +2738,7 @@
           }
         ],
         "summary": "Get fraud checks for authenticated user",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/referrals/fraud-checks/{id}/resolve": {
@@ -2973,9 +2764,7 @@
           }
         ],
         "summary": "Resolve a fraud check",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/referrals/leaderboard": {
@@ -3036,9 +2825,7 @@
           }
         },
         "summary": "Get referral performance leaderboard",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/referrals/links": {
@@ -3068,11 +2855,7 @@
                             "type": "string"
                           },
                           "status": {
-                            "enum": [
-                              "no_referrals",
-                              "pending",
-                              "paid"
-                            ],
+                            "enum": ["no_referrals", "pending", "paid"],
                             "type": "string"
                           }
                         },
@@ -3094,9 +2877,7 @@
           }
         ],
         "summary": "Affiliate links held by the authenticated user, with commission earned",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/referrals/rewards": {
@@ -3107,11 +2888,7 @@
             "name": "status",
             "schema": {
               "type": "string",
-              "enum": [
-                "earned",
-                "paid_out",
-                "cancelled"
-              ]
+              "enum": ["earned", "paid_out", "cancelled"]
             }
           }
         ],
@@ -3126,9 +2903,7 @@
           }
         ],
         "summary": "Get rewards for authenticated user",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/referrals/rewards/summary": {
@@ -3144,9 +2919,7 @@
           }
         ],
         "summary": "Get reward summary for authenticated user",
-        "tags": [
-          "Referrals"
-        ]
+        "tags": ["Referrals"]
       }
     },
     "/api/subscriptions/mine": {
@@ -3162,9 +2935,7 @@
           }
         ],
         "summary": "List the authenticated contributor's subscriptions",
-        "tags": [
-          "Subscriptions"
-        ]
+        "tags": ["Subscriptions"]
       }
     },
     "/api/user/sponsor-matches": {
@@ -3183,9 +2954,7 @@
           }
         ],
         "summary": "Get user's sponsor matching pledges",
-        "tags": [
-          "Sponsor Matching"
-        ]
+        "tags": ["Sponsor Matching"]
       }
     },
     "/api/users/api-keys/:id/rotate": {
@@ -3240,9 +3009,7 @@
           }
         ],
         "summary": "Rotate an API key with a bounded grace period",
-        "tags": [
-          "API Keys"
-        ]
+        "tags": ["API Keys"]
       }
     },
     "/api/users/login": {
@@ -3260,10 +3027,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "email",
-                  "password"
-                ],
+                "required": ["email", "password"],
                 "type": "object"
               }
             }
@@ -3279,9 +3043,7 @@
           }
         },
         "summary": "Login (alias of /api/auth/login)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/users/me/category-follows": {
@@ -3297,9 +3059,7 @@
           }
         ],
         "summary": "List the categories the current user follows",
-        "tags": [
-          "Categories"
-        ]
+        "tags": ["Categories"]
       },
       "post": {
         "description": "Idempotent. Following an already-followed category returns 200 with `created: false` instead of an error, so retries and concurrent double-taps have deterministic behaviour.\n",
@@ -3323,9 +3083,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "category"
-                ],
+                "required": ["category"],
                 "type": "object"
               }
             }
@@ -3352,9 +3110,7 @@
           }
         ],
         "summary": "Follow a campaign category",
-        "tags": [
-          "Categories"
-        ]
+        "tags": ["Categories"]
       }
     },
     "/api/users/me/category-follows/{category}": {
@@ -3398,9 +3154,7 @@
           }
         ],
         "summary": "Unfollow a campaign category",
-        "tags": [
-          "Categories"
-        ]
+        "tags": ["Categories"]
       }
     },
     "/api/users/me/credentials/activity": {
@@ -3473,9 +3227,7 @@
           }
         ],
         "summary": "Get credential activity log",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/users/register": {
@@ -3497,18 +3249,11 @@
                     "type": "string"
                   },
                   "role": {
-                    "enum": [
-                      "contributor",
-                      "creator"
-                    ],
+                    "enum": ["contributor", "creator"],
                     "type": "string"
                   }
                 },
-                "required": [
-                  "email",
-                  "password",
-                  "name"
-                ],
+                "required": ["email", "password", "name"],
                 "type": "object"
               }
             }
@@ -3524,9 +3269,7 @@
           }
         },
         "summary": "Register a new user (alias of /api/auth/register)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/withdrawals/request": {
@@ -3546,11 +3289,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "campaign_id",
-                  "destination_key",
-                  "amount"
-                ],
+                "required": ["campaign_id", "destination_key", "amount"],
                 "type": "object"
               }
             }
@@ -3577,9 +3316,7 @@
           }
         ],
         "summary": "Create a pending withdrawal request",
-        "tags": [
-          "Withdrawals"
-        ]
+        "tags": ["Withdrawals"]
       }
     },
     "/api/withdrawals/{id}/audit": {
@@ -3614,9 +3351,7 @@
           }
         ],
         "summary": "Withdrawal audit timeline (alias of /events)",
-        "tags": [
-          "Withdrawals"
-        ]
+        "tags": ["Withdrawals"]
       }
     },
     "/api/withdrawals/{id}/reject": {
@@ -3663,9 +3398,7 @@
           }
         ],
         "summary": "Platform rejection",
-        "tags": [
-          "Withdrawals"
-        ]
+        "tags": ["Withdrawals"]
       }
     },
     "/campaigns": {
@@ -3700,9 +3433,7 @@
           }
         },
         "summary": "List public campaigns",
-        "tags": [
-          "Public API v1"
-        ]
+        "tags": ["Public API v1"]
       }
     },
     "/campaigns/{id}": {
@@ -3727,9 +3458,7 @@
           }
         },
         "summary": "Campaign detail with milestones",
-        "tags": [
-          "Public API v1"
-        ]
+        "tags": ["Public API v1"]
       }
     },
     "/campaigns/{id}/contributions": {
@@ -3759,9 +3488,7 @@
           }
         ],
         "summary": "List contributions (campaign creator only)",
-        "tags": [
-          "Public API v1"
-        ]
+        "tags": ["Public API v1"]
       },
       "post": {
         "parameters": [
@@ -3784,9 +3511,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "tx_hash"
-                ],
+                "required": ["tx_hash"],
                 "type": "object"
               }
             }
@@ -3807,9 +3532,7 @@
           }
         ],
         "summary": "Record a contribution from a Stellar transaction hash",
-        "tags": [
-          "Public API v1"
-        ]
+        "tags": ["Public API v1"]
       }
     },
     "/users/me": {
@@ -3828,9 +3551,7 @@
           }
         ],
         "summary": "Authenticated user profile and stats",
-        "tags": [
-          "Public API v1"
-        ]
+        "tags": ["Public API v1"]
       }
     }
   },
