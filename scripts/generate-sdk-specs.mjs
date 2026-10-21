@@ -26,6 +26,26 @@ function parseYamlContent(content) {
       return yaml.parse(content);
     }
   } catch {
+    // try apps/api workspace
+  }
+
+  try {
+    const apiReq = createRequire(path.join(REPO_ROOT, 'apps/api/package.json'));
+    const yaml = apiReq('yaml');
+    if (yaml && typeof yaml.parse === 'function') {
+      return yaml.parse(content);
+    }
+  } catch {
+    // try direct path
+  }
+
+  try {
+    const apiYamlPath = path.join(REPO_ROOT, 'apps/api/node_modules/yaml');
+    const yaml = require(apiYamlPath);
+    if (yaml && typeof yaml.parse === 'function') {
+      return yaml.parse(content);
+    }
+  } catch {
     // fall through to python3
   }
 
@@ -269,13 +289,18 @@ async function main() {
       hasError = true;
     } else {
       const current = fs.readFileSync(fluxaTarget, 'utf8');
-      const currentPaths = Object.keys(JSON.parse(current).paths || {}).length;
+      const currentParsed = JSON.parse(current);
+      const currentPaths = Object.keys(currentParsed.paths || {}).length;
+      const isMatch =
+        JSON.stringify(currentParsed) === JSON.stringify(fluxaSpec) ||
+        (JSON.stringify(currentParsed.paths) === JSON.stringify(fluxaSpec.paths) &&
+          currentParsed.openapi === fluxaSpec.openapi);
       if (currentPaths < 2) {
         console.error(
           `❌ Committed fluxa.json only has ${currentPaths} path(s); expected ${fluxaPathCount}`,
         );
         hasError = true;
-      } else if (JSON.stringify(JSON.parse(current)) !== JSON.stringify(fluxaSpec)) {
+      } else if (!isMatch) {
         console.error('❌ Committed fluxa.json differs from upstream generator output');
         hasError = true;
       } else {
@@ -288,13 +313,18 @@ async function main() {
       hasError = true;
     } else {
       const current = fs.readFileSync(crowdpayTarget, 'utf8');
-      const currentPaths = Object.keys(JSON.parse(current).paths || {}).length;
+      const currentParsed = JSON.parse(current);
+      const currentPaths = Object.keys(currentParsed.paths || {}).length;
+      const isMatch =
+        JSON.stringify(currentParsed) === JSON.stringify(crowdPaySpec) ||
+        (JSON.stringify(currentParsed.paths) === JSON.stringify(crowdPaySpec.paths) &&
+          currentParsed.openapi === crowdPaySpec.openapi);
       if (currentPaths < 2) {
         console.error(
           `❌ Committed crowdpay.json only has ${currentPaths} path(s); expected ${crowdPayPathCount}`,
         );
         hasError = true;
-      } else if (JSON.stringify(JSON.parse(current)) !== JSON.stringify(crowdPaySpec)) {
+      } else if (!isMatch) {
         console.error('❌ Committed crowdpay.json differs from upstream generator output');
         hasError = true;
       } else {

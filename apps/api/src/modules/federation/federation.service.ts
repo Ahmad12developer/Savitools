@@ -11,7 +11,7 @@ import { assertPublicHostname, MAX_SAFE_REDIRECTS } from '../../common/ssrf-guar
 import { BoundedTtlMap } from '../../common/bounded-ttl-map';
 import * as smolToml from 'smol-toml';
 import { isStellarPublicKey } from '../../common/stellar-address';
-import { redactValue, isSensitiveKey, REDACTED } from '../../common/redaction';
+import { redactValue } from '../../common/redaction';
 
 const FETCH_TIMEOUT = 15_000;
 export const DEFAULT_FEDERATION_PROBE_TIMEOUT_MS = 3_000;
@@ -235,37 +235,6 @@ const SEP24_TERMINAL_STATES = new Set([
   'too_small',
   'too_large',
   'pending_user_transfer_complete',
-]);
-
-/** Fields whose values must never leave the service. */
-const REDACTED_FIELD_KEYS = new Set([
-  'jwt',
-  'token',
-  'auth',
-  'authorization',
-  'signature',
-  'signed_challenge',
-  'secret',
-  'secret_key',
-  'seed',
-  'private_key',
-  'account_secret',
-  'password',
-  'ssn',
-  'tax_id',
-  'date_of_birth',
-  'email',
-  'phone',
-  'phone_number',
-  'address',
-  'first_name',
-  'last_name',
-  'full_name',
-  'bank_account',
-  'routing_number',
-  'id_number',
-  'passport_number',
-  'national_id',
 ]);
 
 /** Reject non-https and non-public hosts before navigation. */

@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { REDACTED, redactValue, redactString, redactHeaders, isSensitiveKey } from '../../common/redaction';
+import { redactValue } from '../../common/redaction';
 
 export type TimelineEntryKind =
   | 'discovery'
